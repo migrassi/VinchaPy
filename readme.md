@@ -7,7 +7,7 @@ siempre que se disponga previamente de Python instalado en la computadora.
 
 Si no se dispone previamente de Python, es muy simple de [instalar desde la Microsoft Store](ms-windows-store://pdp?hl=es-es&gl=ar&referrer=storeforweb&productid=9pjpw5ldxlz5&ocid=storeweb-pdp-open-cta) y luego ya podrá ejecutarse el comando anterior desde una ventana cmd.
 
-Para instalar Python otros sistemas operativos ver [Python for Linux/UNIX](https://www.python.org/downloads/source/), [Python for macOS](https://www.python.org/downloads/macos/),  [Python for others platformas](https://www.python.org/download/other/).
+Para instalar Python otros sistemas operativos ver [Python for Linux/UNIX](https://www.python.org/downloads/source/), [Python for macOS](https://www.python.org/downloads/macos/),  [Python for others platforms](https://www.python.org/download/other/).
 
  
 ## Programas incluidos en este repositorio
