@@ -44,7 +44,12 @@ while True:
     #cv.imshow('frame', frame)
     cv.imshow('VibroVincha', frame)
 
-    if cv.waitKey(20) == ord('q'): #El numero es el tiempo en mseg entre cada frame. Ajustar manualmente segun FPS
+    # El valor de tef representa el tiempo en ms entre frames. Ajustar manualmente segun FPS del video y compu
+    # Usualmente entre 1 y 40 (en Linux todo es más rápido así que suele ir un numero de 20 o mayor)
+    # tef=20 # Valor probado en Linux
+    tef=3 # Valor probado en Windows
+
+    if cv.waitKey(tef) == ord('q'): 
         break
  
 # Una vez completado todo, release la captura y mato todas las ventanas
