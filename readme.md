@@ -34,14 +34,14 @@ Script de prueba para verificar que OpenCV-Python está correctamente instalado.
 ## audioTest.py
 Script de prueba de sonido. Sirve para verificar que `ffpyplayer` y las librerías FFmpeg funcionan correctamente. No termina automáticamente. Debe interrumpirse por consola con Ctrl-C o Ctrl-X, etc.
 
-# 1280x720_5mb. mp4 
+## 1280x720_5mb.mp4 
 Archivo de video para pruebas. Dura 30" e incluye audio.
 
-# baldosas.mp4
+## baldosas.mp4
 Archivo de video para pruebas. Dura 30" NO TIENE audio.
 
-# Lineas_01.txt
+## Lineas_01.txt
 Archivo de texto con las líneas de comandos suficientes para 30" si se envían a razón de una cada 100 milisegundos.
 
-# starry_night.jpg
+## starry_night.jpg
 Archivo de imagen para pruebas estáticas. 
