@@ -56,7 +56,7 @@ while True:
     #if val != 'eof' and audio_frame is not None:
         #audio
         #img, t = audio_frame
-    # cv.imshow('VibroVincha', frame)
+    cv.imshow('VibroVincha', frame)
     
     # El valor de tef representa el tiempo en ms entre frames. Ajustar manualmente segun FPS del video y compu
     # Usualmente entre 1 y 40 (en Linux todo es más rápido así que suele ir un numero de 20 o mayor)
