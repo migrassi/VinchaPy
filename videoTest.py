@@ -2,6 +2,8 @@ import numpy as np
 import cv2 as cv
 import time
 from ffpyplayer.player import MediaPlayer
+import serial
+ser = serial.Serial("COM7", 115200)
 
  # Basado en el ejemplo de https://docs.opencv.org/4.x/dd/d43/tutorial_py_video_display.html
  
@@ -37,13 +39,17 @@ while True:
     # Imprime cada 100 miliseg
     if time.time_ns()-hora>100000000:  
         if count < len(lineas)-1: count += 1 # Evita que se desborde
-        print("Linea {} cruda: {}".format(count, lineas[count]))
-        # print(lineas[count].split(", ")[1] + "," + lineas[count].split(", ")[2].strip(';\n\t'))
+        # print("Linea {} cruda: {}".format(count, lineas[count]))
+        cadena=lineas[count].split(", ")[1].strip('"') + "," + lineas[count].split(", ")[2].strip(';\n\t"')
+        print(cadena)
+        cadena=cadena+'\n\r'
+        ser.write(cadena.encode())
         hora=time.time_ns()
 
     # Si se leyó correctamente el cuadro ret es True
     if not ret:
         print("Cuadro no recibido (Terminó el video?). Saliendo ...")
+        ser.write("0,0,0,0B".encode())        
         break
 
     # Acá puedo operar sobre el frame
