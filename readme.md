@@ -1,4 +1,118 @@
 # VinchaPy
+
+Sistema de reproducción de videos sincronizados con vincha vibradora.
+
+## Instalación y Configuración
+
+### Requisitos previos
+- Python 3.8 o superior
+- VLC Media Player instalado en el sistema
+- Puerto serial disponible (COM10 por defecto)
+
+### Instalación 
+
+ Aunque hayas clonado todo el repositorio, **es necesario instalar las dependencias de Python**, ya que las librerías no se incluyen en el repositorio por razones de seguridad y tamaño. Los pasos serían:
+
+1. **Clonar el repositorio ejecutando, en el directorio que quieras:**
+   
+   ```bash
+   git clone https://github.com/migrassi/VinchaPy.git
+   cd VinchaPy
+   ```
+
+  Aunque hayas clonado el repositorio, **SIEPRE tenes que crear vos el entorno virtual** porque los entornos virtuales tampoco se incluyen en los repositorios.
+
+2. **Crear el entorno virtual:**
+     
+    ```bash
+    python -m venv .venv                # CREAR el entorno virtual
+   ```
+
+3. **Instalar las dependencias sin activar el entorno virtual**
+
+   ```bash
+     .venv\Scripts\pip.exe install python-vlc pyserial keyboard
+
+   ```
+
+4. **Ejecutar el programa sin activar el entorno virtual**   
+   ```bash
+     .venv\Scripts\python.exe loop.py
+     
+   ```
+
+### Estructura de archivos requerida:
+```
+VinchaPy/
+├── loop.py
+├── data/
+│   ├── alfie_rocas.mp4
+│   ├── alfie_rocas.txt
+│   ├── alfie_playa.mp4
+│   └── alfie_playa.txt
+```
+
+**Verificar que VLC esté instalado** en tu sistema operativo (no la librería Python, sino el programa VLC Media Player)
+
+## loop.py - Este es el Reproductor
+
+**`loop.py`** es el programa principal actualizado que permite reproducir videos con sincronización de vibración usando VLC como motor de reproducción.
+
+### Características principales:
+- ✅ **Reproducción en pantalla completa** con VLC
+- ✅ **Comunicación serial** con la vincha vibradora
+- ✅ **Control por teclado** en tiempo real
+- ✅ **Ciclo automático** de múltiples videos
+- ✅ **Manejo robusto de errores**
+
+**Ejecutar el programa sin activar el entorno virtual**   
+   ```bash
+     .venv\Scripts\python.exe loop.py
+     
+   ```
+
+### Control de teclado:
+- **BARRA ESPACIADORA**: Reinicia el ciclo de videos
+- **Tecla Q**: Sale del programa
+- **Ctrl+C**: Salida de emergencia
+
+### Configuración:
+
+1. **Editar la configuración de videos** en `loop.py`:
+   ```python
+   videos_config = [
+       {
+           'video_path': 'data/alfie_rocas.mp4',
+           'txt_path': 'data/alfie_rocas.txt',
+           'intervalo': 0.10021  # segundos entre vibraciones
+       },
+       {
+           'video_path': 'data/alfie_playa.mp4',
+           'txt_path': 'data/alfie_playa.txt',
+           'intervalo': 0.10021
+       }
+   ]
+   ```
+
+2. **Configurar el puerto serial** (línea 17):
+   ```python
+   puerto = "COM10"  # Cambiar según tu sistema
+   ```
+
+### Solución de problemas:
+- **Error de puerto serial**: El programa continúa sin comunicación serial, imprime los comandos por consola
+- **Videos no encontrados**: Verificar rutas en `videos_config`
+- **Error de VLC**: Asegurar que VLC esté instalado en el sistema
+
+---
+
+## 📚 Información de referencia (versiones anteriores)
+
+___
+A partir de acá información desactualizada. La mantenemos como referencia
+___
+
+
 Recursos y pruebas para la Vincha Vibradora. Requiere  OpenCV para Python, que se instala con el comando:
 
      pip install opencv-python

@@ -3,7 +3,7 @@ import cv2 as cv
 import time
 from ffpyplayer.player import MediaPlayer
 import serial
-ser = serial.Serial("COM7", 115200)
+ser = serial.Serial("COM3", 115200)
 
  # Basado en el ejemplo de https://docs.opencv.org/4.x/dd/d43/tutorial_py_video_display.html
  
